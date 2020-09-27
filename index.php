@@ -30,11 +30,15 @@
                     <br>
                 </div>
                 <?php
-                    /*try {
-                        $conn = new PDO("mysql:host=$servername;dbname=$dbname;charset=utf8mb4", $username, $password);
+
+                     /*require_once './config.php';
+                     use Config as conf;
+                     try {
+                        $conn = new PDO("mysql:host=".conf\$servername.";dbname=".conf\$dbname.
+                        ";charset=".conf\$charset,conf\$username, conf\$password);
                         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
                     } catch(PDOException $e) {
-                        die("Ошибка доступа к базе!") . PHP_EOL;
+                        die("Ошибка доступа к базе!");
                     }
                     foreach ($conn->query("SELECT * from Comments ORDER BY time DESC;") as $comment_in_db) {
                         $id = $comment_in_db['id'];
@@ -57,7 +61,7 @@
                 <br>
                 <label for="comment">Ваш комментарий</label>
                 <br>
-                <textarea name="comment" cols="40" rows="8"></textarea>
+                <textarea id="comment" name="comment" cols="40" rows="8"></textarea>
                 <br><br>
                 <button type="submit" style="min-width: 10em; align-self: flex-end">Отправить</button>
             </form>
