@@ -36,7 +36,7 @@
                     } catch(PDOException $e) {
                         die("Ошибка доступа к базе!") . PHP_EOL;
                     }
-                    foreach ($conn->query("SELECT * from Comments") as $comment_in_db) {
+                    foreach ($conn->query("SELECT * from Comments ORDER BY time DESC;") as $comment_in_db) {
                         $id = $comment_in_db['id'];
                         $name = $comment_in_db['name'];
                         echo "<div class='comment' id='"."$id'>";
@@ -67,7 +67,7 @@
        /* if ($_POST['name'] and $_POST['comment'])
         {
             $time = time();
-            $add = $conn->prepare("INSERT INTO Comments (name, text, time) VALUES (:name, :text, :time)");
+            $add = $conn->prepare("INSERT INTO Comments (name, text, time) VALUES (:name, :text, :time);");
             $add->bindParam(':name', $_POST['name']);
             $add->bindParam(':text', $_POST['comment']);
             $add->bindParam(':time', $time);
