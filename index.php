@@ -22,25 +22,23 @@
         </div>
     </header>
 
-    <main style="display : flex; flex: 1 0 auto; background-color: #eeeeee">
+    <main style="flex: 1 0 auto; background-color: #eeeeee">
         <div class="wrapper" style="margin: 1em 6em;">
-            <div class="comment">
-
+            <div id="comments">
+                <?php ?>
             </div>
             <hr>
             <h2>Оставить комментарий</h2>
-            <form action="" method="post" style="">
+            <form action="" method="post" style="display: flex; flex-direction: column; min-width: 20em; max-width: 35em">
                 <label for="name">Ваше имя</label>
                 <br>
                 <input id="name" type="text" name="name" style="height: 2em">
                 <br><br>
                 <label for="comment">Ваш комментарий</label>
                 <br>
-                <input id="comment" type="text" name="comment" style="height: 12em">
+                <textarea name="Comment" cols="40" rows="8"></textarea>
                 <br><br>
-                <div style="flex-direction: column-reverse">
-                    <button type="submit">Отправить</button>
-                </div>
+                <button type="submit" style="min-width: 10em; align-self: flex-end">Отправить</button>
             </form>
         </div>
     </main>
